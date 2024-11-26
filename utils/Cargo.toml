@@ -1,0 +1,27 @@
+[package]
+name = "utils"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+readme.workspace = true
+license.workspace = true
+exclude.workspace = true
+repository.workspace = true
+homepage.workspace = true
+description.workspace = true
+
+[dependencies]
+tokio = {workspace = true}
+realme = {version = "0.2.1", features = ["toml","placeholder"]}
+serde = {workspace = true}
+tracing = {workspace = true}
+tracing-subscriber = { git = "https://github.com/tokio-rs/tracing.git", branch = "master", features = ["json","fmt","env-filter","std","registry"] }
+tracing-appender = { git = "https://github.com/tokio-rs/tracing.git", branch = "master" }
+tracing-opentelemetry = "0.28"
+opentelemetry = "0.27.1"
+opentelemetry_sdk = "0.27.1"
+opentelemetry-stdout = "0.27.0"
+sqlx = { workspace = true, features = ["postgres","runtime-tokio-rustls","macros","chrono","uuid","json"] }
+
+[lints]
+workspace = true

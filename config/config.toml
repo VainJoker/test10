@@ -1,0 +1,31 @@
+env = "dev"
+
+[app]
+api_host = "0.0.0.0"
+api_port = 8080
+
+[log]
+dir = "logs"
+
+[log.database]
+prefix = "database"
+level = "info"
+target = "database"
+
+[log.error]
+prefix = "error"
+level = "error"
+
+[log.other]
+prefix = "app"
+level = "info"
+
+[database]
+url = '{{ env(name="DATABASE_URL") }}'
+
+[rabbitmq]
+url = '{{ env(name="RABBITMQ_URL") }}'
+
+[dragonfly]
+url = '{{ env(name="DRAGONFLY_URL") }}'
+
